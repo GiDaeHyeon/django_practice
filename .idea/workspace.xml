@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4f986e5-3e91-4447-8dff-51003da16c51" name="Default Changelist" comment="django practice">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +38,7 @@
       <workItem from="1624163959006" duration="459000" />
       <workItem from="1624164551388" duration="165000" />
       <workItem from="1624182723018" duration="175000" />
+      <workItem from="1624183252202" duration="1242000" />
     </task>
     <task id="LOCAL-00001" summary="django practice">
       <created>1624164689022</created>
