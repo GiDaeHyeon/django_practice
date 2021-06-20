@@ -6,7 +6,7 @@
     <div class="text-center" style="max-width: 500px; margin: 4rem auto;">
 
         <h1>
-            {{ target_article.title}}
+            {{ target_article.titlev}}
         </h1>
 
         <h5>
@@ -20,15 +20,22 @@
             {{ target_article.content }}
         </p>
 
-        <hr>
         {% if target_article.writer == user %}
-            <a href="{% url 'articleapp:update' pk=target_article.pk %}" class="btn btn-primary col-3">
-                Update
-            </a>
-            <a href="{% url 'articleapp:delete' pk=target_article.pk %}" class="btn btn-danger col-3">
-                Delete
-            </a>
+        <a href="{% url 'articleapp:update' pk=target_article.pk %}" class="btn btn-primary col-3">
+            Update
+        </a>
+        <a href="{% url 'articleapp:delete' pk=target_article.pk %}" class="btn btn-danger col-3">
+            Delete
+        </a>
         {% endif %}
+        <hr>
+
+        {% for comment in target_article.comment.all %}
+            {% include 'commentapp/detail.html' with comment=comment %}
+        {% endfor %}
+
+        {% include 'commentapp/create.html' with article=target_article %}
+
     </div>
 </div>
 

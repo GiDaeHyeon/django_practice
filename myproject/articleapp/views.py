@@ -1,5 +1,6 @@
+from commentapp.form import CommeentCreationForm
 from django.urls.base import reverse_lazy
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import DeleteView, FormMixin
 from .decorators import article_ownership_required
 from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, ListView
@@ -31,8 +32,9 @@ class ArticleCreateView(CreateView):
     def get_success_url(self) -> str:
         return reverse('articleapp:detail', kwargs={'pk': self.object.pk})
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(DetailView, FormMixin):
     model = Article
+    form_class = CommeentCreationForm
     template_name = 'articleapp/detail.html'
     context_object_name = 'target_article'
 
